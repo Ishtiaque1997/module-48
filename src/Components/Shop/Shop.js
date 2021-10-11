@@ -12,7 +12,10 @@ const Shop = () => {
   <div className='Shop-container'>
    <div className='Product-container'>
     {
-     products.map(product=><Product product={product}></Product>)
+     products.map(product=>
+     <Product 
+     key={product.key}
+     product={product}></Product>)
     }
    </div>
    <div className='cart-container'>
