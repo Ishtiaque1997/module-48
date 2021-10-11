@@ -14,15 +14,17 @@ const Product = (props) => {
  
  return (
   <div className='product'>
-  <div>
+   <div>
     <img src={img} alt="" />
-  </div>
-  <div>
-    <h4 className='product-name'>{name}</h4>
-    <p><small>By:{seller}</small></p>
-    <p>Price:{price}</p>
+   </div>
+   <div className='product-details'>
+     <h4 className='product-name'>{name}</h4>
+     <div className='infos'>
+       <p><small>By:{seller}</small></p>
+     <p>Price:{price}</p>
     <p><small>Only {stock} available. Order soon</small></p>
     <button className='btn-regular' onClick={()=>props.handleAddToCart(props.product)}>{element}Add to cart</button>
+     </div>
    </div>
    </div>
  );
