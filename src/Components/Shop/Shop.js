@@ -11,6 +11,9 @@ const Shop = () => {
  //set state for cart
  const[cart,setCart]=useState([]);
 
+ //set state for search
+ const[displayProducts,setDisplayProducts]=useState([])
+
  //loading data from fake data
  useEffect(()=>{
    console.log('product api called')
@@ -19,6 +22,7 @@ const Shop = () => {
    .then(data=>{
      setProducts(data)
     //  console.log('products received')
+    setDisplayProducts(data);
    })
  },[])
   
@@ -51,12 +55,26 @@ const Shop = () => {
      //save to local database
      addToDb(product.key);
 }
+const handleSearch=event=>{
+  const searchText=event.target.value;
+  const matchedProducts=products.filter(product=>product.name.toLowerCase().includes(searchText.toLowerCase()));
+  console.log(matchedProducts.length);
+  setDisplayProducts(matchedProducts)
+}
 
  return (
+   <>
+     <div className='search-container'>
+     <input 
+     onChange={handleSearch}
+     type="text" placeholder='Search Product'/>
+
+   </div>
+
   <div className='shop-container'>
    <div className='product-container'>
     {
-        products.map(product=>
+        displayProducts.map(product=>
          <Product 
            key={product.key}//unique key
            handleAddToCart={handleAddToCart}//props for the event handler
@@ -68,6 +86,7 @@ const Shop = () => {
      <Cart cart={cart}></Cart>
    </div> 
   </div>
+   </>
  );
 };
 
