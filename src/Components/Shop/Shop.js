@@ -13,18 +13,28 @@ const Shop = () => {
 
  //loading data from fake data
  useEffect(()=>{
+   console.log('product api called')
    fetch('./products.JSON')
    .then(res=>res.json())
-   .then(data=>setProducts(data))
+   .then(data=>{
+     setProducts(data)
+     console.log('products received')
+   })
  },[])
   
  useEffect(()=>{
-   const savedCart=getStoredCart();
+   console.log('local storage called')
+   if(products.length){
+     const savedCart=getStoredCart();
+     const storedCart=[];
+
    for (const key in savedCart){
      const addedProduct=products.find(product=>product.key===key);
-     console.log(key,addedProduct)
+     storedCart.push(addedProduct)
    }
- },[])
+   setCart(storedCart);
+   }
+ },[products])
 
 
 
