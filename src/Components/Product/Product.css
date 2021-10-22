@@ -19,3 +19,6 @@
   border-radius: 5px;
   cursor: pointer;
 }
+.product-details {
+  text-align: justify;
+}
