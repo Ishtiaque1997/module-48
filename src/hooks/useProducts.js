@@ -1,16 +1,12 @@
 import {useState,useEffect} from 'react';
-
 const useProducts=()=>{
- const[products,setProducts]=useState([]);
+ const [products,setProducts]=useState([]);
 
  useEffect(()=>{
-  fetch('/products.json')
+  fetch('./products.json')
   .then(res=>res.json())
-  .then(data=>setProducts(data))
-
- },[]);
-
- //return necessary things
- return [products];
+  .then(data=>setProducts(data));
+ },[])
+ return[products,setProducts];
 }
 export default useProducts;
