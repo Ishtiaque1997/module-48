@@ -30,6 +30,7 @@ const Cart = (props) => {
      <p>Shipping:{shipping}</p>
      <p>tax:{tax.toFixed(2)}</p>
      <h3>Final:{grandTotal.toFixed(2)}</h3>
+     {props.children}
   </div>
  );
 };

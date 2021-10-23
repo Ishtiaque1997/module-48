@@ -11,11 +11,13 @@ import Shop from './Components/Shop/Shop';
 import OrderReview from './Components/OrderReview/OrderReview';
 import Inventory from './Components/Inventory/Inventory'
 import NotFound from './Components/NotFound/NotFound'
+import PlaceOrder from "./Components/PlaceOrder/PlaceOrder";
 function App() {
   return (
     <div className="App">
-      <Header></Header>
+      
       <Router>
+        <Header></Header>
         <Switch>
           <Route exact path="/">
               <Shop></Shop>
@@ -28,6 +30,9 @@ function App() {
           </Route>
            <Route  path="/inventory">
               <Inventory></Inventory>
+          </Route>
+           <Route  path="/placeorder">
+              <PlaceOrder></PlaceOrder>
           </Route>
            <Route  path="*">
               <NotFound></NotFound>
