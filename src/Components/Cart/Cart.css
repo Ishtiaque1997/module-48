@@ -1,3 +1,5 @@
 .cart-details {
   text-align: justify;
+  position: fixed;
+  top: 0;
 }
