@@ -20,4 +20,10 @@ export default initializeAuthentication;
 
 //1.Create login component
 //2.Create register component
-//3.Create route for ogin and register 
+//3.Create route for login and register 
+
+
+//1. set up sign in method
+//2. set up sign out method
+//3. user state
+//4. special observer
