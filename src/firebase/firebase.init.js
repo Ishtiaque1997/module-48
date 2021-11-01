@@ -27,3 +27,10 @@ export default initializeAuthentication;
 //2. set up sign out method
 //3. user state
 //4. special observer
+//5. return necessary methods 
+
+
+//1.create a context
+//2. create context provider
+//3. use auth provider
+//4. create useAuth hook 
