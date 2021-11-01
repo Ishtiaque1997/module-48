@@ -12,6 +12,8 @@ import OrderReview from './Components/OrderReview/OrderReview';
 import Inventory from './Components/Inventory/Inventory'
 import NotFound from './Components/NotFound/NotFound'
 import PlaceOrder from "./Components/PlaceOrder/PlaceOrder";
+import Login from "./Components/Login/Login";
+import Register from "./Components/Register/Register";
 function App() {
   return (
     <div className="App">
@@ -31,8 +33,14 @@ function App() {
            <Route  path="/inventory">
               <Inventory></Inventory>
           </Route>
+          <Route  path="/register">
+              <Register></Register>
+          </Route>
            <Route  path="/placeorder">
               <PlaceOrder></PlaceOrder>
+          </Route>
+          <Route  path="/login">
+            <Login></Login>
           </Route>
            <Route  path="*">
               <NotFound></NotFound>

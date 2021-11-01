@@ -16,4 +16,8 @@ export default initializeAuthentication;
 //3. get configuration
 //4. Initialize firebase
 //5. Enable auth method
-//6.
+
+
+//1.Create login component
+//2.Create register component
+//3.Create route for ogin and register 
