@@ -14,10 +14,12 @@ import NotFound from './Components/NotFound/NotFound'
 import PlaceOrder from "./Components/PlaceOrder/PlaceOrder";
 import Login from "./Components/Login/Login";
 import Register from "./Components/Register/Register";
+import AuthProvider from "./context/AuthProvider";
 function App() {
   return (
     <div className="App">
       
+      <AuthProvider>
       <Router>
         <Header></Header>
         <Switch>
@@ -47,6 +49,8 @@ function App() {
           </Route>
         </Switch>
       </Router>
+
+      </AuthProvider>
      
     </div>
   );
